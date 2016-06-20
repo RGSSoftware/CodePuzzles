@@ -11,9 +11,9 @@ func minKeystrokes(frequencies: [Int], keySizes: [Int]) -> Int {
     }
     
     var keySlots : [Int] = []
-    for key in keySizes {
-        for i in 1...key{
-            keySlots.append(i)
+    for keySize in keySizes {
+        for index in 1...keySize{
+            keySlots.append(index)
         }
     }
     
@@ -29,7 +29,11 @@ func minKeystrokes(frequencies: [Int], keySizes: [Int]) -> Int {
     
 }
 
-let frequencies = [353, 844, 814, 878, 565, 64, 520, 870, 595, 674, 189, 659, 351, 662, 239, 616, 147, 950, 592, 249, 733, 147, 147, 588, 221, 117, 834, 838, 25, 507, 206, 587, 146, 64, 382, 449, 962, 509, 975, 434, 177, 620, 94, 435, 569, 918, 317, 238, 864, 129]
+let frequencies = [353, 844, 814, 878, 565, 64, 520, 870, 595, 674, 189,
+                   659, 351, 662, 239, 616, 147, 950, 592, 249, 733, 147,
+                   147, 588, 221, 117, 834, 838, 25, 507, 206, 587, 146,
+                   64, 382, 449, 962, 509, 975, 434, 177, 620, 94, 435,
+                   569, 918, 317, 238, 864, 129]
 let keySizes = [35, 49, 28, 33]
 let expect = 111474
 

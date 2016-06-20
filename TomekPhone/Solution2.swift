@@ -14,14 +14,14 @@ func minKeystrokes(frequencies: [Int], keySizes: [Int]) -> Int {
         
     var totalKeyValues = 0
     
-    var newKeySlots = keySizes.sorted{ return $0 > $1 }
-    var keysCount = newKeySlots.count
+    var sortedKeySlots = keySizes.sorted{ return $0 > $1 }
+    var keysCount = sortedKeySlots.count
     
     var keyM = [Int: Int]()
     for (index, f) in sortedFrequencies.enumerated(){
         
         
-        if newKeySlots[index % keysCount] <= 0 {
+        if sortedKeySlots[index % keysCount] <= 0 {
             
              keysCount -= 1
             
@@ -35,7 +35,7 @@ func minKeystrokes(frequencies: [Int], keySizes: [Int]) -> Int {
             
         totalKeyValues += f * keyM[index % keysCount]!
             
-        newKeySlots[index % keysCount] -= 1
+        sortedKeySlots[index % keysCount] -= 1
         
     }
     
@@ -45,7 +45,11 @@ func minKeystrokes(frequencies: [Int], keySizes: [Int]) -> Int {
     
 }
 
-let frequencies = [353, 844, 814, 878, 565, 64, 520, 870, 595, 674, 189, 659, 351, 662, 239, 616, 147, 950, 592, 249, 733, 147, 147, 588, 221, 117, 834, 838, 25, 507, 206, 587, 146, 64, 382, 449, 962, 509, 975, 434, 177, 620, 94, 435, 569, 918, 317, 238, 864, 129]
+let frequencies = [353, 844, 814, 878, 565, 64, 520, 870, 595, 674, 189,
+                   659, 351, 662, 239, 616, 147, 950, 592, 249, 733, 147,
+                   147, 588, 221, 117, 834, 838, 25, 507, 206, 587, 146,
+                   64, 382, 449, 962, 509, 975, 434, 177, 620, 94, 435,
+                   569, 918, 317, 238, 864, 129]
 let keySizes = [35, 49, 28, 33]
 let expect = 111474
 
