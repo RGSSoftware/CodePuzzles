@@ -1,8 +1,8 @@
 import Foundation
 
 let line = "Hello world! two."
-print(line)
-print(reverseWords(line))
+print(line) // "Hello world! two."
+print(reverseWords(line)) // "two. world! Hello"
 
 
 
