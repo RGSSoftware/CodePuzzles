@@ -1,4 +1,4 @@
-Takes roman numeral string and converts it to a base10 digit.
+Take roman numeral string and converts it to a base10 digit.
 
 ```swift
 XCTAssertEqual(try "LXXVIII".romanNumeralToInt(), 78)
